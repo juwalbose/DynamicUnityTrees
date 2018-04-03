@@ -150,11 +150,12 @@ MonoBehaviour:
   - ']'
   iterations: 3
   angle: 25
-  startLength: 1
-  startWidth: 0.8
+  startLength: 0.8
+  startWidth: 0.7
   treeOrigin: {x: 0, y: -5, z: 0}
-  widthDecreaseFactor: 0.8
+  widthDecreaseFactor: 0.85
   lengthDecreaseFactor: 0.85
+  useRandomAngle: 0
 --- !u!4 &1276860710
 Transform:
   m_ObjectHideFlags: 0

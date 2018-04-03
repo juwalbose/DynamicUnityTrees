@@ -147,6 +147,7 @@ MonoBehaviour:
   trunkBaseWidth: 1
   numLayers: 8
   branchAngle: 30
+  useRandomAngle: 0
   widthDecreaseFactor: 0.6
   lengthDecreaseFactor: 0.8
 --- !u!4 &985311166

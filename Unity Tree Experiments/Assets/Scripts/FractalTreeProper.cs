@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
@@ -9,6 +8,7 @@ public class FractalTreeProper : MonoBehaviour {
 	public float trunkBaseWidth;
 	public int numLayers;
 	public float branchAngle;
+	public bool useRandomAngle;
 
 	public float widthDecreaseFactor;
 	public float lengthDecreaseFactor;
@@ -80,8 +80,12 @@ public class FractalTreeProper : MonoBehaviour {
 			
 		}
 		baseVertexPointer=vertices.Count;
-		CreateBranch(currentLayer+1,tipMidPoint,angle+branchAngle,baseVertexPointer);
-		CreateBranch(currentLayer+1,tipMidPoint,angle-branchAngle,baseVertexPointer);
+		float newAngle=branchAngle;
+		if(useRandomAngle){
+			newAngle=Random.Range(branchAngle-15,branchAngle+15);
+		}
+		CreateBranch(currentLayer+1,tipMidPoint,angle+newAngle,baseVertexPointer);
+		CreateBranch(currentLayer+1,tipMidPoint,angle-newAngle,baseVertexPointer);
     }
 
 	private void OnDrawGizmos () {
